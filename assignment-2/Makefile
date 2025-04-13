@@ -1,13 +1,21 @@
-# Makefile 예시
+# Makefile
+
 CXX = gcc
-CXXFLAGS = -std=c++17 -Wall
-TARGET = attention
-SRC = attention.cpp
+CXXFLAGS = -std=c++11 -Wall
+LDFLAGS = -lstdc++
 
-all: $(TARGET)
+TARGETS = attention attention_mp multiHeadAttention
 
-$(TARGET): $(SRC)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC) -lstdc++
+all: $(TARGETS)
+
+attention: attention.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $< $(LDFLAGS) -lpthread
+
+attention_mp: attention_mp.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $< $(LDFLAGS) -lpthread
+
+multiHeadAttention: multiHeadAttention.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $< $(LDFLAGS)
 
 clean:
-	rm -f $(TARGET)
+	rm -f $(TARGETS)
