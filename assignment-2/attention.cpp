@@ -92,11 +92,11 @@ void parallel_matmul(const vector<vector<int>>& A, const vector<vector<int>>& B,
         int start = t * rows_per_thread;
         int end   = min(start + rows_per_thread, total_rows);
         // 스레드 데이터 초기화
-        thread_data[t].start_row  = start;
-        thread_data[t].end_row    = end;
-        thread_data[t].A          = &A;
-        thread_data[t].B          = &B;
-        thread_data[t].C          = &C;
+        thread_data[t].start_row = start;
+        thread_data[t].end_row = end;
+        thread_data[t].A = &A;
+        thread_data[t].B = &B;
+        thread_data[t].C = &C;
         thread_data[t].multiplyKT = multiplyKT;
         // 스레드 생성
         pthread_create(&threads[t], nullptr, thread_matmul, &thread_data[t]);

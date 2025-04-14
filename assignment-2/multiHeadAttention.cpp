@@ -197,13 +197,13 @@ int main(int argc, char* argv[]) {
     auto end_time = chrono::steady_clock::now();
     auto duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time).count();
 
-    // 걸린 시간, 최종 결과 출력
-    cout << duration << endl;
-    print_matrix(final_result);
-
     // 공유 메모리 해제
     shmdt(shm_ptr);
     shmctl(shm_id, IPC_RMID, nullptr);
+
+    // 걸린 시간, 최종 결과 출력
+    cout << duration << endl;
+    print_matrix(final_result);
 
     return 0;
 }

@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
 
 RUN apt-get update && \
-    apt-get install -y gcc g++ build-essential && \
-    apt-get clean
+    apt-get install -y build-essential htop && \
+    apt-get clean \

@@ -1,5 +1,3 @@
-# Makefile
-
 CXX = gcc
 CXXFLAGS = -std=c++11 -Wall
 LDFLAGS = -lstdc++
