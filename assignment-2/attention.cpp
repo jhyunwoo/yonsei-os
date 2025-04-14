@@ -138,7 +138,7 @@ int main(int argc, char* argv[]){
 
         // 출력
         cout << duration << endl;
-        print_matrix(attention);
+//        print_matrix(attention);
 
 
     return 0;
