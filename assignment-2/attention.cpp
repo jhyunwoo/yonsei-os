@@ -161,7 +161,7 @@ int main(int argc, char* argv[]){
     auto duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time).count();
 
     // 결과 출력
-    cout << duration << "\n";
+    cout << duration << endl;
     print_matrix(attention);
 
     return 0;

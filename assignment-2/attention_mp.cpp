@@ -131,16 +131,13 @@ int main(int argc, char* argv[]) {
     int q_r, q_s, k_r, k_s, v_r, v_s;
     // Q 행렬 입력 받기
     cin >> q_r >> q_s;
-    vector<vector<int>> Q(q_r, vector<int>(q_s));
-    Q = input_matrix(q_r, q_s);
-
+    vector<vector<int>> Q = input_matrix(q_r, q_s);
+    // K 행렬 입력 받기
     cin >> k_r >> k_s;
-    vector<vector<int>> K(k_r, vector<int>(k_s));
-    K = input_matrix(k_r, k_s);
-
+    vector<vector<int>> K = input_matrix(k_r, k_s);
+    // V 행렬 입력 받기
     cin >> v_r >> v_s;
-    vector<vector<int>> V(v_r, vector<int>(v_s));
-    V = input_matrix(v_r, v_s);
+    vector<vector<int>> V = input_matrix(v_r, v_s);
 
     // Q * K^T 계산
     vector<vector<int>> QK_T(q_r, vector<int>(k_r, 0));
