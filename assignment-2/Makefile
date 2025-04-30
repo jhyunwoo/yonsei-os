@@ -1,6 +1,6 @@
 CXX = gcc
 CXXFLAGS = -std=c++11 -Wall
-LDFLAGS = -lstdc++
+LDFLAGS = -lstdc++ -O3
 
 TARGETS = attention attention_mp multiHeadAttention
 
